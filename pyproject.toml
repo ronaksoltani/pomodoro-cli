@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pomodoro-focus-cli"
+version = "1.0.0"
+description = "A focus timer with local SQLite productivity reports"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Ronak Soltani"}]
+dependencies = ["rich>=13.7", "plyer>=2.1", "python-dotenv>=1.0"]
+
+[project.scripts]
+pomodoro = "pomodoro_cli.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
